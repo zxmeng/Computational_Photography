@@ -61,7 +61,7 @@ function readme(){
 
 <div id="header">
 <h1 style="color: white">CSCI3290 Assignment 1</h1>
-<h2 style="color: white">MENG Zhixiang 1155029015</h2>
+<h2 style="color: white">MENG Zhixiang</h2>
 </div>
 <div id="page">
 <div id="content">
@@ -69,36 +69,36 @@ function readme(){
 	<h1 class="title" id="objective">Objective</h1>
 	<div class="content">
 	<p>The goal of this project is to use low-pass and high-pass filters to process two images respectively and then combine them to get a hybrid image. Both grayscale image and color image are supported. Also, three padding methods are used: pad zero, pad replicate and pad symmetric. Besides, Fast Fourier Transform is used to accelerate the convolution.</p>
-	<img src="images/low_frequencies.jpg" alt="" class="photo"  /><img src="images/high_frequencies.jpg" alt="" class="photo"  /><img src="images/hybrid_image.jpg" alt="" class="photo"  />
+	<img src="images/a1_images/low_frequencies.jpg" alt="" class="photo"  /><img src="images/a1_images/high_frequencies.jpg" alt="" class="photo"  /><img src="images/a1_images/hybrid_image.jpg" alt="" class="photo"  />
 </div></div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="hybrid">Hybrid Images</h1>
 	<div class="content">
-	<img src="images/cat.bmp" alt="" class="photo right"  /><img src="images/dog.bmp" alt="" class="photo right"  />
-	<img src="images/highpasscat.jpg" alt="" class="photo right"  /><img src="images/lowpassdog.jpg" alt="" class="photo right"  />
+	<img src="images/a1_images/cat.bmp" alt="" class="photo right"  /><img src="images/a1_images/dog.bmp" alt="" class="photo right"  />
+	<img src="images/a1_images/highpasscat.jpg" alt="" class="photo right"  /><img src="images/a1_images/lowpassdog.jpg" alt="" class="photo right"  />
 	<br><p>By applying a Gaussian filter to an image, we can make it smoother and it's called low-pass filtering. After that, we keep the low-frequency information. If we substract this low-frequency part from the original image, then we can get a high-pass filtered image, where only the high-frequency information (edges) remains. Adding them together, we can get a hybrid image, which looks like the low-pass filtered image when it's small but looks like the high-pass filtered image when it's large.</p>
-	<img src="images/hybrid_dc.jpg" alt="" class="photo" style="width: 99%; height: auto" align="right"  />
+	<img src="images/a1_images/hybrid_dc.jpg" alt="" class="photo" style="width: 99%; height: auto" align="right"  />
 </div></div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="cutoff">Cutoff Frequencies</h1>
 	<div class="content">
 	<p>Using different frequencies will affect how smooth the filtered image is and then affect how good the result is. In this project, the cutoff frequency is related to the standard deviation and the size of kernel that we use. Generally, when increasing the cutoff frequency, low-pass filtered image becomes more smooth but high-pass filtered image becomes more clear, seen in hybrid image. We need to adjust these two cutoff frequencies to keep a balance between two images so that both of them can be seen in the hybrid image generated.</p>
-	<img src="images/e1.jpg" alt="" class="photo"  /><img src="images/e3.jpg" alt="" class="photo"  /><img src="images/e7.jpg" alt="" class="photo"  />
-	<img src="images/m5.jpg" alt="" class="photo"  /><img src="images/m7.jpg" alt="" class="photo"  /><img src="images/m9.jpg" alt="" class="photo"  />
-	<img src="images/me71.jpg" alt="" class="photo"  /><img src="images/me73.jpg" alt="" class="photo"  /><img src="images/me77.jpg" alt="" class="photo"  />	
+	<img src="images/a1_images/e1.jpg" alt="" class="photo"  /><img src="images/a1_images/e3.jpg" alt="" class="photo"  /><img src="images/a1_images/e7.jpg" alt="" class="photo"  />
+	<img src="images/a1_images/m5.jpg" alt="" class="photo"  /><img src="images/a1_images/m7.jpg" alt="" class="photo"  /><img src="images/a1_images/m9.jpg" alt="" class="photo"  />
+	<img src="images/a1_images/me71.jpg" alt="" class="photo"  /><img src="images/a1_images/me73.jpg" alt="" class="photo"  /><img src="images/a1_images/me77.jpg" alt="" class="photo"  />	
 </div></div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="padding">Padding Methods</h1>
 	<div class="content">
 	<p>Using pad-zero method, there may be a black border in the filtered image, as it's actually padding the image with a black border. However, by using pad-replicate or pad-symmetric method, this effect can be eliminated.</p>
-	<img src="images/fs950.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/fs951.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/fs952.jpg" alt="" class="photo" style="width: 30%; height: auto" />
-	<img src="images/bp950.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/bp951.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/bp952.jpg" alt="" class="photo" style="width: 30%; height: auto" />
+	<img src="images/a1_images/fs950.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a1_images/fs951.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a1_images/fs952.jpg" alt="" class="photo" style="width: 30%; height: auto" />
+	<img src="images/a1_images/bp950.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a1_images/bp951.jpg" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a1_images/bp952.jpg" alt="" class="photo" style="width: 30%; height: auto" />
 </div></div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="fft">Fast Fourier Transform</h1>
 	<div class="content">
 	<p>Previously, when calculating convolution, we need to do the multiplication between image and kernel directly, which cost us O(n^2*m^2). After using Fourier Transform to process the image and kernel first, we only need to do mutiplication in frequency domain and then do the Inverse Fast Fourier Transform. The results look basically the same, but the speed is much faster. In this project, I first pad image according to the size of kernel, then pad kernel to the same size as the new image, then apply FFT to them after padding zeros to size 1024*1024. After IFFT, I remove those paddings to get the hybrid image as the same size as source image.</p>
-	<img src="images/fft_dc.jpg" alt="" class="photo" style="width: 30%; height: auto"  /><img src="images/fft_fs.jpg" alt="" class="photo" style="width: 30%; height: auto"  /><img src="images/fft_bp.jpg" alt="" class="photo" style="width: 30%; height: auto"  />
+	<img src="images/a1_images/fft_dc.jpg" alt="" class="photo" style="width: 30%; height: auto"  /><img src="images/a1_images/fft_fs.jpg" alt="" class="photo" style="width: 30%; height: auto"  /><img src="images/a1_images/fft_bp.jpg" alt="" class="photo" style="width: 30%; height: auto"  />
 </div></div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="efficiency">Efficiency</h1>
@@ -111,6 +111,7 @@ function readme(){
 <div id="menu">
 <ul id="updates">
 <li><a></a></li>
+<li><a href="index.html" title="">Home</a></li>
 <li><a href="#objective" title="">Objective</a></li>
 <li><a href="#hybrid" title="">Hybrid Images</a></li>
 <li><a href="#cutoff" title="">Cutoff Frequencies</a></li>

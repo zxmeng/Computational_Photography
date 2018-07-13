@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Design by Design Profesionals  Released for free under a Creative Commons Attribution 2.5 License Title : Essence Version : 1.0 Released : 20110518 Description: A two-column fixed-width template. Suitable for blogs and small business websites. -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>CSCI3290 MENG Zhixiang</title>
+
+<link href="default.css" rel="stylesheet" type="text/css" />
+
+<!-- Image Preloader -->
+<script src="jquery.min.js"></script>
+
+</head>
+<script>
+$(document).ready(function(){
+	setInterval(function(){
+		if(window.scrollY>=300){
+			$('#updates').css('top',0);
+			$('#updates').css('width',200);
+			$('#updates').css('position','fixed');
+		}
+		else{
+			$('#updates').css('position','static');
+		}
+	},100)
+})
+</script>
+
+<body><div id="mask"></div><table id="pic_div" style="z-index:910; width:100%; height:100%; text-align:center; display:none;position:fixed;"><tr><td style="width:100%;  text-align:center; background:none;" id="mask_"><img id="pic_img" style=" max-height:500px; border-style:solid; border-color:#FFF; border-width:thick"></td></tr></table>
+<table id="readme" style="z-index:910; width:100%; height:100%; display:none;position:fixed;"><tr><td style="width:100%;background:none;x;" id="mask_1"><div style="width:270px; height:170px; background-color:#FFF; padding:40px; margin:auto; line-height:35px"><h2>CSCI3290 Report</h2><p style=" line-height:40p">Available pages:<br>
+<ul>
+<li>index (pc/mobile)</li>
+<li>registration (pc/mobile)</li>
+</ul>All functionalities are disabled</p></div></td></tr></table>
+<script>
+$(document).ready(function(){
+$('img').click(function(){
+	$('body').css('overflow','hidden');
+	$('#mask').show();
+	$('#pic_img').attr('src',$(this).attr('src'));
+	$('#pic_div').fadeIn(200);	
+})
+$('#mask_').click(function(){
+	$('#pic_div').hide();
+	$('#mask').hide();
+	$('body').css('overflow','scroll');
+	//$('#outer').css('overflow','scroll');
+})
+$('#mask_1').click(function(){
+	$('#readme').hide();
+	$('#mask').hide();
+	$('body').css('overflow','scroll');
+	//$('#outer').css('overflow','scroll');
+})
+})
+function readme(){
+	$('body').css('overflow','hidden');
+	$('#mask').show();
+	$('#readme').fadeIn(200);	
+}
+</script>
+<div id="fb-root"></div>
+
+<div id="header">
+<h1 style="color: white">CSCI3290</h1>
+<h2 style="color: white">MENG Zhixiang</h2>
+</div>
+<div id="page">
+<div id="content">
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="A1"> <a href="a1_index.html">Assignment 1</a></h1>
+	<div class="content">
+	<p style="text-align:justify" >The goal of this project is to use low-pass and high-pass filters to process two images respectively and then combine them to get a hybrid image. Both grayscale image and color image are supported. Also, three padding methods are used: pad zero, pad replicate and pad symmetric. Besides, Fast Fourier Transform is used to accelerate the convolution.</p>
+	</div>
+</div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="A2"> <a href="a2_index.html">Assignment 2</a></h1>
+	<div class="content">
+	<p style="text-align:justify" >This project is to use Laplacian Pyramid and Poisson method to blend an object from a source image into a target image respectively. Our goal is to create seamless blending. At last, we apply the Poisson Blending method to convert a color image into grayscale image.</p>
+	</div>
+</div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="A3"> <a href="a3_index.html">Assignment 3</a></h1>
+	<div class="content">
+	<p style="text-align:justify" >This project is to use a bunch of LDR images under different exposures to recover the radiance map and then construct a HDR image. Different construction algorithms are implemented and compared.</p>
+	</div>
+</div>
+</div>
+<div id="sidebar">
+<div id="menu">
+<ul id="updates">
+<li><a></a></li>
+<li><a href="#A1" title="">Assignment 1</a></li>
+<li><a href="#A2" title="">Assignment 2</a></li>
+<li><a href="#A3" title="">Assignment 3</a></li>
+</ul>
+</div>
+
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+
+
+<div id="footer">
+
+</div>
+
+</body></html>
