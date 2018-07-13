@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Design by Design Profesionals  Released for free under a Creative Commons Attribution 2.5 License Title : Essence Version : 1.0 Released : 20110518 Description: A two-column fixed-width template. Suitable for blogs and small business websites. -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>CSCI3290 MENG Zhixiang</title>
+
+<link href="default.css" rel="stylesheet" type="text/css" />
+
+<!-- Image Preloader -->
+<script src="jquery.min.js"></script>
+
+</head>
+<script>
+$(document).ready(function(){
+	setInterval(function(){
+		if(window.scrollY>=300){
+			$('#updates').css('top',0);
+			$('#updates').css('width',200);
+			$('#updates').css('position','fixed');
+		}
+		else{
+			$('#updates').css('position','static');
+		}
+	},100)
+})
+</script>
+
+<body><div id="mask"></div><table id="pic_div" style="z-index:910; width:100%; height:100%; text-align:center; display:none;position:fixed;"><tr><td style="width:100%;  text-align:center; background:none;" id="mask_"><img id="pic_img" style=" max-height:500px; border-style:solid; border-color:#FFF; border-width:thick"></td></tr></table>
+<table id="readme" style="z-index:910; width:100%; height:100%; display:none;position:fixed;"><tr><td style="width:100%;background:none;x;" id="mask_1"><div style="width:270px; height:170px; background-color:#FFF; padding:40px; margin:auto; line-height:35px"><h2>CSCI3290 Report</h2><p style=" line-height:40p">Available pages:<br>
+<ul>
+<li>index (pc/mobile)</li>
+<li>registration (pc/mobile)</li>
+</ul>All functionalities are disabled</p></div></td></tr></table>
+<script>
+$(document).ready(function(){
+$('img').click(function(){
+	$('body').css('overflow','hidden');
+	$('#mask').show();
+	$('#pic_img').attr('src',$(this).attr('src'));
+	$('#pic_div').fadeIn(200);	
+})
+$('#mask_').click(function(){
+	$('#pic_div').hide();
+	$('#mask').hide();
+	$('body').css('overflow','scroll');
+	//$('#outer').css('overflow','scroll');
+})
+$('#mask_1').click(function(){
+	$('#readme').hide();
+	$('#mask').hide();
+	$('body').css('overflow','scroll');
+	//$('#outer').css('overflow','scroll');
+})
+})
+function readme(){
+	$('body').css('overflow','hidden');
+	$('#mask').show();
+	$('#readme').fadeIn(200);	
+}
+</script>
+<div id="fb-root"></div>
+
+<div id="header">
+<h1 style="color: white">CSCI3290 Assignment 2</h1>
+<h2 style="color: white">MENG Zhixiang 1155029015</h2>
+</div>
+<div id="page">
+<div id="content">
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="objective">Objective</h1>
+	<div class="content">
+	<p style="text-align:justify" >This project is to use Laplacian Pyramid and Poisson method to blend an object from a source image into a target image respectively. Our goal is to create seamless blending. At last, we apply the Poisson Blending method to convert a color image into grayscale image.</p>
+	<img src="images/eye.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/eye2.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/eye_out_poisson.png" alt="" class="photo" style="width: 30%; height: auto" />
+	<img src="images/hand.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/hand2.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/hand_out_poisson.png" alt="" class="photo" style="width: 30%; height: auto" />
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="pyramid">Laplacian Pyramid Blending</h1>
+	<div class="content">
+	<p style="text-align:justify" >By Laplacian Pyramid method, we first down sample the source, target amd mask images, to construct the image pyramid. To construct the Gaussian pyramid, we resize the down-sampling images back to larger size, creating blurring images. Then substract the Gaussian pyramid from the image pyramid, we obtain the Laplacian pyramid. Then combine Laplacian pyramids of source and target images, with the Gaussian pyramids of mask as parameters, we get the merged Laplacian pyramid. Similarly, combine smallest image in image pyramids of source and target images, with the Gaussian pyramids of mask as parameters, we get the smallest merged image. With iteratively resizing the merged image to larger size and add the merged Laplacian image, we finally get the output blending image.</p>
+	<img src="images/back4pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/back3pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/back2pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /> <img src="images/back1pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/back0pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/back_pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" />
+	<img src="images/fore4pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/fore3pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/fore2pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /> <img src="images/fore1pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/fore0pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/fore_pyrimad.png" alt="" class="photo" style="width: 14%; height: auto" />
+	<img src="images/_imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/0imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/1imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" /> <img src="images/2imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/3imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" /><img src="images/4imagemerged.png" alt="" class="photo" style="width: 14%; height: auto" />
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="poisson">Poisson Blending</h1>
+	<div class="content">
+	<p style="text-align:justify" >While using Laplacian Pyramid method leads to quite good result in the example above, in most cases this method is not sufficient as the results are not seamless. Now, we apply another method, called Poisson Blending. Basically, when using this method, instead of pixel values, the gradients of source image inside the mask region are copied into the target image. And the gradients are adjusted according to the gradients of target image in the boundary of the mask region, to ensure there is no gap around the border.</p>
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr>
+	<td>Target Image</td>
+	<td>Source Image</td>
+	<td>Laplacian Pyramid</td>
+	<td>My Implementation</td>
+	</tr>
+	<tr>
+	<td><img src="images/notebook.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/notebook2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/notebook_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/notebook_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/snow.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/snow2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/snow_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/snow_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	</table>
+	<p style="text-align:justify" >Here are more examples comparing results of Laplacian Pyramid Blending and Poisson Blending. It can be clearly seen that results of Poisson Blending are genereally better, i.e. more seamless, than those of Laplacian Pyramid Blending. You may click the image to have a clearer view.</p>
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr>
+	<td>Target Image</td>
+	<td>Source Image</td>
+	<td>Laplacian Pyramid</td>
+	<td>My Implementation</td>
+	</tr>
+	<tr>
+	<td><img src="images/wall.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/wall2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/wall_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/wall_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/jeep.JPG" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/jeep2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/jeep_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/jeep_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/sea.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/sea2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/sea_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/sea_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/hulk.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/hulk2.jpg" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/hulk_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/hulk_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	</table>
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="tuto">Further Explanation</h1>
+	<div class="content"><img src="images/matrix.png" alt="" class="photo right"  />
+	<p style="text-align:justify" >Actually, there is a minor difference between my implementation and the standard implementation. Different from matrix construction shown in the right picture, instead of ones or pixel values, zeros are placed at those positions within red cycles, in both A and B. In other words, pixels outside the mask region are totally excluded from the calculation. It turns out that the results are quite similar to those of standard implementation using mixed gradients, i.e. adding the gradients of source and target images together.</p>
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr>
+	<td>Poisson without Mixed Gradients</td>
+	<td>Poisson with Mixed Gradients</td>
+	<td>My Implementation</td>
+	</tr>
+	<tr>
+	<td><img src="images/notebook_out_tuto.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/notebook_out_tuto_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/notebook_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/ca_out_tuto.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca_out_tuto_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/hulk_out_tuto.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/hulk_out_tuto_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/hulk_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	<tr>
+	<td><img src="images/sea_out_tuto.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/sea_out_tuto_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/sea_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	</tr>
+	</table>
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="mixing">Further Modification</h1>
+	<div class="content">
+	<p style="text-align:justify">Although the results of Poisson Blending are generally good enough, as seen above, there is still possibility to further improve the results. We can apply the mixing gradients policy. The gradient of each pixel inside the mask region, previously is calculated basing on source image alone. With such a policy, the gradient of each pixel, to be copied to target image, is the larger one between those of source and target image. As shown in the example below, after using mixing gradients, the source image looks more transparent in the output. This method is not always definitely better, of course, depending on what outcome effect is expected.</p>
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr><td>Target Image</td><td>Source Image</td><td>Mask</td></tr>
+	<tr><td><img src="images/ca.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca_mask.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td>Laplacian Pyramid</td><td>My Implementation</td><td>Further Modification</td></tr>
+	<tr><td><img src="images/ca_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/ca_out_poisson_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	</table>
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="gradient">Conjugate Gradient Method</h1>
+	<div class="content">
+	<p style="text-align:justify">Apart from using scipy built-in function to solve Ax=b, we can use conjugate gradient method to solve it. The basic idea is to follow the steepest direction and approach the optimal point iteratively. Here are some examples generated by using this method. The results are good enough and look similar to those of using scipy built-in function.</p>
+	<img src="images/notebook_out_poisson_bonus.png" alt="" class="photo" style="width: 13%; height: auto" /><img src="images/snow_out_poisson_bonus.png" alt="" class="photo" style="width: 22%; height: auto" />
+	<img src="images/ca_out_poisson_bonus.png" alt="" class="photo" style="width: 29%; height: auto" /><img src="images/sea_out_poisson_bonus.png" alt="" class="photo" style="width: 25%; height: auto" />
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="failure">Failure Case</h1>
+	<div class="content">
+	<p style="text-align:justify">In our project, we encounter a failure case, as shown below. In this case, the Laplacian Pyramid failed as the color is not consistent in the output. This is due to the method itself, which is unsolvable by Laplacian Pyramid Blending method, as the colors of input are not compatible. And the Poisson method failed because the edges of the corresponding features in two images are not at the same places, they don't match, such as eyes and nose. As gradients are copied in Poisson Blending method, there appears to be two noses and the eyes look strange in the output.</p>
+	<img src="images/vinci.png" alt="" class="photo" style="width: 22%; height: auto" /><img src="images/vinci2.png" alt="" class="photo" style="width: 22%; height: auto" /><img src="images/vinci_out_pyramid.png" alt="" class="photo" style="width: 22%; height: auto" /><img src="images/vinci_out_poisson.png" alt="" class="photo" style="width: 22%; height: auto" />
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="convert">Convert Color to Grayscale</h1>
+	<div class="content">
+	<p style="text-align:justify">When using the built-in color convert function in opencv to convert a RGB image to grayscale, the result may not be good, as the intensity information are lost. Inspired by Poisson Blending, we can convert the image to HSV first, and then treat the saturation channel as source image and value channel as target image, so basically we are copying S channel to V channel and the result will be a grayscale image. Apparently, the results can be much better.</p>
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr><td>Input</td><td>cv2</td><td>Output</td></tr>
+	<tr><td><img src="images/bt35.jpg" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt35_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt35_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td><img src="images/bt42.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt42_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt42_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td><img src="images/bt74.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt74_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt74_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	</table>
+	<p style="text-align:justify" > Indicated by our experiments, however, the result can be too "bright", where the values exceed 255. Therefore, a darker version will also be generated by brutely reducing 50% light intensity, to get a better output.</p>	
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr><td>Input</td><td>cv2</td><td>Original Output</td><td>Darker Version</td></tr>
+	<tr><td><img src="images/bt73.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt73_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt73_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt73_out_poisson_gray_darker.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td><img src="images/bt12_2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt12_2_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt12_2_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt12_2_out_poisson_gray_darker.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td><img src="images/bt10.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt10_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt10_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt10_out_poisson_gray_darker.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td><img src="images/bt8_2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt8_2_out_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt8_2_out_poisson_gray.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/bt8_2_out_poisson_gray_darker.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	</table>
+</div></div>
+<div  class="post" style=" border-bottom:none">
+	<h1 class="title" id="efficiency">Efficiency</h1>
+	<div class="content">
+	<p style="text-align:justify"> When using Laplacian Pyramid Blending method to process the images, the execution time is generally less than 3 seconds, which is quite constant. On the other hand, when using Poisson Blending method, the execution time varies a lot, from less than 10 seconds to over 100 seconds, which depends on the size of source image, target image and mask region. If we use conjugate gradient method, the execution time seems to be shorter, varying from around 6 seconds to around 40 seconds, and it also depends on the number of iterations when solving Ax=b.</p>
+</div></div>
+
+</div>
+<div id="sidebar">
+<div id="menu">
+<ul id="updates">
+<li><a></a></li>
+<li><a href="#objective" title="">Objective</a></li>
+<li><a href="#pyramid" title="">Laplacian Pyramid Blending</a></li>
+<li><a href="#poisson" title="">Poisson Blending</a></li>
+<li><a href="#tuto" title="">Further Explanation</a></li>
+<li><a href="#mixing" title="">Further Modification</a></li>
+<li><a href="#gradient" title="">Conjugate Gradient Method</a></li>
+<li><a href="#failure" title="">Failure Case</a></li>
+<li><a href="#convert" title="">Convert Color to Grayscale</a></li>
+<li><a href="#efficiency" title="">Efficiency</a></li>
+</ul>
+</div>
+
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+
+
+<div id="footer">
+
+</div>
+
+</body></html>

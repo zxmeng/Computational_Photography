@@ -1,0 +1,11 @@
+file name	exposure time
+
+belg001.jpg	1/1000
+belg002.jpg	1/500
+belg003.jpg	1/250
+belg004.jpg	1/125
+belg005.jpg	1/60
+belg006.jpg	1/30
+belg007.jpg	1/15
+belg008.jpg	1/8
+belg009.jpg	1/4

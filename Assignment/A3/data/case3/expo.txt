@@ -1,0 +1,11 @@
+# Number of Images
+8
+# Filename  		exposure time
+3.29.png		0.003
+6.29.png 		0.006
+12.29.png		0.012
+24.29.png		0.024
+48.29.png		0.048
+96.29.png		0.096
+192.29.png     		0.192
+384.29.png		0.384

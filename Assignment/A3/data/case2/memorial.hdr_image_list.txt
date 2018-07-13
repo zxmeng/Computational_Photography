@@ -1,0 +1,19 @@
+# Number of Images
+16
+# Filename  		exposure time
+memorial0061.ppm 	32	
+memorial0062.ppm 	16	
+memorial0063.ppm 	8
+memorial0064.ppm 	4
+memorial0065.ppm 	2
+memorial0066.ppm 	1       	
+memorial0067.ppm 	1/2       	
+memorial0068.ppm 	1/4     
+memorial0069.ppm 	1/8
+memorial0070.ppm 	1/16
+memorial0071.ppm 	1/32
+memorial0072.ppm 	1/64
+memorial0073.ppm 	1/128
+memorial0074.ppm 	1/256
+memorial0075.ppm 	1/512
+memorial0076.ppm 	1/1024
