@@ -6,4 +6,4 @@
 
 * HDR Radiance Map Construction and Tone Mapping
 
-Check more details at: https://zxmeng.github.io/CSCI3290/
+Check more details at: https://zxmeng.github.io/Computational_Photography/
