@@ -1,11 +1,9 @@
-# CSCI3290
+# Computational Photography
 
-Course taken in Fall 2016 at CUHK, by Prof. Jiaya Jia.
+* Image Filtering and Hybrid Images
 
-A1: Image Filtering and Hybrid Images
+* Image Blending (Laplacian Pyramid Blending, Poisson Blending)
 
-A2: Image Blending (Laplacian Pyramid Blending, Poisson Blending)
-
-A3: HDR Radiance Map Construction and Tone Mapping
+* HDR Radiance Map Construction and Tone Mapping
 
 Check more details at: https://zxmeng.github.io/CSCI3290/
