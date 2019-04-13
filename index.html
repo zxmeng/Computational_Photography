@@ -69,15 +69,23 @@ function readme(){
 	<h1 class="title" id="A1"> <a href="a1.html">Image Filtering and Hybrid Images</a></h1>
 	<div class="content">
 	<p style="text-align:justify" >The goal of this project is to use low-pass and high-pass filters to process two images respectively and then combine them to get a hybrid image. Both grayscale image and color image are supported. Also, three padding methods are used: pad zero, pad replicate and pad symmetric. Besides, Fast Fourier Transform is used to accelerate the convolution.</p>
-	<img src="images/a1_images/low_frequencies.jpg" alt="" class="photo"  /><img src="images/a1_images/high_frequencies.jpg" alt="" class="photo"  /><img src="images/a1_images/hybrid_image.jpg" alt="" class="photo"  />
+	<img src="images/a1_images/hybrid_dc.jpg" alt="" class="photo" style="width: 99%; height: auto" align="right"  />
 	</div>
 </div>
 <div  class="post" style=" border-bottom:none">
 	<h1 class="title" id="A2"> <a href="a2.html">Image Blending</a></h1>
 	<div class="content">
 	<p style="text-align:justify" >This project is to use Laplacian Pyramid and Poisson method to blend an object from a source image into a target image respectively. Our goal is to create seamless blending. At last, we apply the Poisson Blending method to convert a color image into grayscale image.</p>
-	<img src="images/a2_images/eye.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a2_images/eye2.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a2_images/eye_out_poisson.png" alt="" class="photo" style="width: 30%; height: auto" />
-	<img src="images/a2_images/hand.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a2_images/hand2.png" alt="" class="photo" style="width: 30%; height: auto" /><img src="images/a2_images/hand_out_poisson.png" alt="" class="photo" style="width: 30%; height: auto" />
+	<table border="1pt" style="float: center; text-align: center;" >
+	<tr><td>Target Image</td><td>Source Image</td><td>Mask</td></tr>
+	<tr><td><img src="images/a2_images/ca.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/a2_images/ca2.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/a2_images/ca_mask.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	<tr><td>Laplacian Pyramid</td><td>My Implementation</td><td>Further Modification</td></tr>
+	<tr><td><img src="images/a2_images/ca_out_pyramid.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/a2_images/ca_out_poisson.png" alt="" class="photo" style="width: 90%; height: auto" /></td>
+	<td><img src="images/a2_images/ca_out_poisson_mixed.png" alt="" class="photo" style="width: 90%; height: auto" /></td></tr>
+	</table>
 	</div>
 </div>
 <div  class="post" style=" border-bottom:none">
